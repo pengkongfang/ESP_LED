@@ -15,7 +15,7 @@ enum eDataManager{
 	eDataManager_Tip,
 };
 
-int dataManager_Init(enum eDataManager_Creator Creator);
+int dataManager_Init(void);
 
 int sendOnlinePackage(int creator);
 int sendUplstatPackage(int creator);

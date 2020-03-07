@@ -3,12 +3,8 @@
 
 #include <rtthread.h>
 
-struct AHT10_Struct{
-	float humidity;
-	float temperature;
-};
 
-extern struct AHT10_Struct AHT10_Str;
+#define WIFI_KEY_PIN 54
 
 #endif
 

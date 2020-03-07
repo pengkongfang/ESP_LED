@@ -134,6 +134,20 @@ __retry:
 	}
 }
 
-
+int sendPackage(rt_uint8_t * pack,rt_uint32_t len){
+	int ret=0;
+	if(eTCPClientStatus==eTCPClient_Open){
+		ret = send(sock, pack, len, 0);
+		if (ret < 0){            /* 接收失败，关闭这个连接 */
+			//closesocket(sock);
+			//rt_kprintf("\nsend error,close the socket.\r\n");
+	//		if(recv_data)
+	//			rt_free(recv_data);
+			eTCPClientStatus=eTCPClient_Closen;
+		//	tcpClient_Init();				//重启TCPclient
+		}
+	}
+	return ret;
+}
 
 

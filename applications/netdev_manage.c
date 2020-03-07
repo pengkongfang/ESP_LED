@@ -14,7 +14,7 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
-
+#include "user_sever.h"
 #include <at_device_esp8266.h>
 
 
@@ -95,7 +95,7 @@ static void netdevManager_thread_entry(void * parameter){
 		}
 		rt_thread_delay(1000);
 	}
-	wifi_oneshot_timer();
+
 	netdev_set_default(esp0);
 	netdev_set_status_callback(esp0,netdev_esp0_callback);
 	
